@@ -2,6 +2,7 @@
 *.mp4
 *.psd
 
+InterpWebsite/mysqlConnect.php
 ServerSettings.txt
 
 /models-fullResolution

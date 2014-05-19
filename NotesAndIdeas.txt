@@ -3,16 +3,18 @@ TO DO - MAKING:
 
 [ ]	Local version of Font Awesome
 [ ] Get final link, add Analytics
+[ ] Update GitHub link in footer, a few places in the about page (search for github.com link)
+[ ]	Favicon
 
 TO DO - DOCUMENTATION AND CLEANUP:
-[ ]	Delete old or copy files
-[ ]	Push to Github
-[ ] Update GitHub link in footer, a few places in the about page (search for github.com link)
+[ ]	One more look through for unused files
 
 TO DO - FOR TURBULENCE:
 [ ] Description
 [ ]	Bio
 [ ]	100x100px icon
+[ ] Upload CSV to database
+[ ]	Upload files, test on Turbulence server
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
