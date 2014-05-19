@@ -62,7 +62,7 @@
 			<img src="images/photo-in-room.png" style="width: 100%;" />
 			<p><em>A photograph, placed in a false 3D room.</em></p>
 
-			<p>This process was automated using series of small programs written in <a href="http://www.processing.org" target="_blank">Processing</a> (see the <a href="http://www.github.com" target="_blank">project GitHub page</a> for full source code). The images were interpolated one into another and saved into separate folders. Because of the way <a href="http://en.wikipedia.org/wiki/Photogrammetry" target="_blank">photogrammetry</a> works, a background is required for the software to triangulate the position of the camera. For this reason, the interpolated photographs were placed into a fake 3D room and the "room" rotated a full 360&deg; over the course of the 100 images.</p>
+			<p>This process was automated using series of small programs written in <a href="http://www.processing.org" target="_blank">Processing</a> (see the <a href="https://github.com/jeffThompson/Interp" target="_blank">project GitHub page</a> for full source code). The images were interpolated one into another and saved into separate folders. Because of the way <a href="http://en.wikipedia.org/wiki/Photogrammetry" target="_blank">photogrammetry</a> works, a background is required for the software to triangulate the position of the camera. For this reason, the interpolated photographs were placed into a fake 3D room and the "room" rotated a full 360&deg; over the course of the 100 images.</p>
 
 			<img src="images/photoscan-screenshot.png" style="width: 100%;" />
 			<p><em>Point cloud created by PhotoScan.</em></p>
@@ -86,7 +86,7 @@
 			</ul></p>
 
 			<h2>SOURCE CODE, LICENSE</h2>
-			<p>All <a href="http://www.github.com">images, models, and source code</a> for this project released under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+			<p>All <a href="https://github.com/jeffThompson/Interp">images, models, and source code</a> for this project released under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
 			 target="_blank">Creative Commons, BY-NC-SA</a> license - feel free to use but <a href="mailto:mail@jeffreythompson.org">please let me know</a>.</p>
 
 			 <h2>THANK YOU</h2>

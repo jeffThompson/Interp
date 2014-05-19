@@ -1,4 +1,4 @@
-![screenshot](https://raw.github.com/jeffThompson/Interp/master/DocumentationAndScreenshots/219.png)
+![screenshot](https://raw.github.com/jeffThompson/Interp/master/DocumentationAndScreenshots/219-web.png)
 
 INTERP
 ====================
@@ -24,7 +24,7 @@ An ongoing file with process, notes, and to do lists
 * **Process Files**  
 Lots of random scripts and related files for file processing, cleanup, etc
 
-*The full-res model files are not included in this repo because they total about 70GB. If you're interested in getting some of these files, please let me know.*
+*The full-res model files are not included in this repo because they total about 7GB. If you're interested in getting some of these files, please let me know.*
 
 LICENSE
 -------

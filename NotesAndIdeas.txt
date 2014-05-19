@@ -2,8 +2,8 @@
 TO DO - MAKING:
 
 [ ]	Local version of Font Awesome
-[ ] Get final link, add Analytics
-[ ] Update GitHub link in footer, a few places in the about page (search for github.com link)
+[ ] Get final link, add Analytics - load from separate PHP file?
+[ ] Change database settings file to Turbulence server
 [ ]	Favicon
 
 TO DO - DOCUMENTATION AND CLEANUP:
