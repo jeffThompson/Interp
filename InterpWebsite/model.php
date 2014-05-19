@@ -72,7 +72,8 @@
 	<link href="css/model-styles.css" rel="stylesheet" type="text/css">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-	<script src="js/three.js"></script>
+    <!-- load javascript -->
+	<script src="js/three.min.js"></script>
 	<script src="js/TrackballControls.js"></script>
 	<script src="js/OBJMTLLoader.js"></script>
 	<script src="js/MTLLoader.js"></script>
