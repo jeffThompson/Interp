@@ -1,0 +1,49 @@
+
+/*
+INTERP
+Jeff Thompson | 2013-14 | www.jeffreythompson.org
+
+INTERP is a 2013 commission of New Radio and Performing Arts, Inc, for
+its Turbulence.org website. It was made possible with funding from the
+National Endowment for the Arts.
+*/
+
+/* ABOUT PAGE */
+#wrapper {
+	max-width: 900px !important;
+}
+img {
+	width: 100%;
+}
+
+header li {
+	display: inline;
+}
+header li + li:before {
+	content: '++';
+	padding: 0 15px;
+}
+header h1 a, header h1 a:link, header h1 a:active, header h1 a:hover, header h1 a:visited {
+	font-weight: 100 !important;
+	color: black !important;
+}
+
+/* footer size */
+footer {
+	width: 70%;
+	margin: 40px auto 0 auto;
+}
+
+/* break between credits, make footer wider on smaller screens */
+@media screen and (max-width: 500px) {
+	header li {
+		display: list-item;
+		padding: 0;
+	}
+	header li + li:before { 
+		content: none;
+	}
+	footer {
+		width: 100%;
+	}
+}

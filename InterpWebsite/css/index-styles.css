@@ -1,0 +1,85 @@
+
+/*
+INTERP
+Jeff Thompson | 2013-14 | www.jeffreythompson.org
+
+INTERP is a 2013 commission of New Radio and Performing Arts, Inc, for
+its Turbulence.org website. It was made possible with funding from the
+National Endowment for the Arts.
+*/
+
+/* INDEX PAGE */
+/* header */
+header li {
+	display: inline;
+}
+header li + li:before {
+	content: '++';
+	padding: 0 15px;
+}
+header h1 a, header h1 a:link, header h1 a:active, header h1 a:hover, header h1 a:visited {
+	font-weight: 100 !important;
+	color: black !important;
+}
+
+/* sorting */
+#sortParams {
+	margin-top: 40px;
+}
+#sortParams li {
+	display: inline;
+	padding-right: 30px;
+}
+#sortParams li:last-child {
+	padding: 0;
+}
+#sortParams a {
+	font-weight: 400;
+}
+.sortSelected {
+	font-weight: 800 !important;
+}
+
+/* responsive grid, via: */
+/* http://tympanus.net/codrops/2013/03/19/thumbnail-grid-with-expanding-preview */
+.thumbnails {
+	list-style: none;
+	padding: 20px 0;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+}
+.thumbnails li {
+	display: inline-block;
+	margin: 10px 5px 30px 5px;
+	vertical-align: top;
+	width: 320px;
+}
+.thumbnails li > img, .thumbnails li > a img {
+	width: 100%;
+	height: auto;
+}
+
+/* footer size */
+footer {
+	width: 70%;
+	margin: 40px auto 0 auto;
+}
+footer a, footer a:link, footer a:visited {
+}
+footer a:hover, footer a:active {
+}
+
+/* break between credits, make footer wider on smaller screens */
+@media screen and (max-width: 500px) {
+	header li {
+		display: list-item;
+		padding: 0;
+	}
+	header li + li:before { 
+		content: none;
+	}
+	footer {
+		width: 100%;
+	}
+}

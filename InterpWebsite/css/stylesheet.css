@@ -1,0 +1,99 @@
+
+/*
+INTERP
+Jeff Thompson | 2013-14 | www.jeffreythompson.org
+
+INTERP is a 2013 commission of New Radio and Performing Arts, Inc, for
+its Turbulence.org website. It was made possible with funding from the
+National Endowment for the Arts.
+*/
+
+
+/* CSS RESET */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,img,ins,kbd,q,s,samp,small,strike,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+body{line-height:1}
+ol,ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+table{border-collapse:collapse;border-spacing:0}
+
+
+/* IMPORT LATO FONT */
+/* @import url(http://fonts.googleapis.com/css?family=Lato:100,400,700); */
+@font-face {
+    font-family: 'Lato';
+    src: url('fonts/lato-webfont.eot');
+    src: url('fonts/lato-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/lato-webfont.woff') format('woff'),
+         url('fonts/lato-webfont.ttf') format('truetype'),
+         url('fonts/lato-webfont.svg#latoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* BASIC CSS SETUP */
+html, body {
+	background-color: rgb(220,220,220);
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	color: black;	
+	font-size: 16px;
+	text-align: center;
+}
+
+h1 {
+	font-size: 12em;			/* 192/16 -- just used on index page for title */
+								/* fancier resize done in JS */
+	font-weight: 100;
+	margin-bottom: -0.15em;
+	overflow: hidden;			/* seems to avoid weird size-flickering on load */
+}
+h2 {
+	font-size: 2em;
+	font-weight: 400;
+	margin-top: 2em;
+	margin-bottom: 0.2em;
+}
+
+p {
+	font-size: 1em;
+	margin-bottom: 1.4em;		/* ~22/16 */
+}
+p, ul {
+	line-height: 1.3em;
+}
+
+i:after {
+	white-space: nowrap;
+}
+
+a, a:link, a:visited {
+	color: black;
+	text-decoration: none;
+	font-weight: 700;
+}
+a:active, a:hover {
+	color: rgb(200,100,0);
+	/*color: white;*/
+	text-decoration: none;
+	font-weight: 700;
+}
+
+strong {
+	font-weight: 700;
+}
+
+
+/* WRAPPER */
+#wrapper {
+	width: 90%;
+	min-width: 320px;
+	margin: 30px auto 60px auto;	
+}
+
+
+/* MISC */
+.clear {
+	clear: both;
+}

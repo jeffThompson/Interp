@@ -1,0 +1,8 @@
+*.mov
+*.mp4
+*.psd
+
+ServerSettings.txt
+
+/models-fullResolution
+/ModelOutputFiles

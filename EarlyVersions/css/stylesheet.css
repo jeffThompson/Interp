@@ -1,0 +1,142 @@
+
+/*
+STYLESHEET
+Jeff Thompson | www.jeffreythompson.org
+
+Font Awesome by Dave Gandy - http://fontawesome.io
+*/
+
+
+/* basics */
+html, body {
+	background-color: #222222;
+	margin: 0;
+	padding: 0;
+	font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	/*overflow: hidden;*/
+}
+a, a:visited {
+	color: rgb(150,150,150);
+	text-decoration: none;
+	border: none;
+}
+a:hover, a:active {
+	color: rgb(255,150,0);
+	text-decoration: none;
+	border-bottom: 1px dotted rgb(255,150,0);
+}
+
+/* INTRO PAGE */
+#intro {
+	margin: 30px auto;
+	padding: 70px;
+	width: 800px;
+	background-color: white;
+	text-align: center;
+}
+#intro h1 {
+	font-size: 130px;
+	line-height: 0.9em;
+	font-weight: 400;
+	margin: 0;
+	padding: 0;
+	font-style: italic;
+}
+#intro p {
+
+}
+#modelScreenshot {
+	margin: 0 auto 0 auto;
+	width: 300px;
+	height: auto;
+}
+
+#closeDiv {
+	float: right;
+	margin: -15px -10px 0 0;
+	border: none;
+}
+#safariInstructions {
+	clear: both;
+	width: 60%;
+	font-weight: 400;
+	display: none;
+	background-color: rgb(245,245,245);
+	margin: 30px auto 0 auto;
+	padding: 30px;
+}
+#safariInstructions h2 {
+	font-weight: 400;
+	margin-top: 0px;
+}
+#safariInstructions ol, #safariInstructions p {
+	text-align: left;
+}
+
+#viewProject {
+	font-size: 24px;
+	font-weight: 400;
+	font-style: italic;
+	margin: 60px auto 60px auto;
+}
+#viewProject a {
+	padding: 20px 100px 20px 100px;
+	background-color: rgb(255,255,0);
+	color: black;
+}
+#viewProject a:hover {
+	background-color: rgb(255,150,0);
+	color: black;
+}
+#byline {
+	color: rgb(150,150,150);
+}
+
+/* GALLERY OF MODELS */
+#info {
+	top: 0px;
+	position: absolute;
+	width: 100%;
+	margin: 40px;
+	font-size: 14px;
+	font-style: italic;
+}
+#modelFilename {
+	color: white;
+	font-size: 22px;
+}
+#commands {
+	margin-top: -8px;
+	color: rgb(150,150,150);
+}
+#instructions {
+	color: rgb(100,100,100);
+}
+#instructions a:hover {
+	border: none;
+}
+#infoButton {
+	position: absolute;
+	top: 0px;
+	right: 60px;
+}
+
+/* navigation */
+#arrow-left, #arrow-right {
+	color: white;
+	font-size: 72px;
+	position: absolute;
+	opacity: 0.3;
+	top: 40%;
+	cursor: pointer;
+}
+#arrow-left {
+	left: 40px;
+}
+#arrow-right {
+	right: 40px;
+}
+#arrow-left:hover, #arrow-right:hover {
+	opacity: 1.0;
+}

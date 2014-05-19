@@ -1,0 +1,145 @@
+
+TO DO - MAKING:
+
+[ ]	Local version of Font Awesome
+[ ] Get final link, add Analytics
+
+TO DO - DOCUMENTATION AND CLEANUP:
+[ ]	Delete old or copy files
+[ ]	Push to Github
+[ ] Update GitHub link in footer, a few places in the about page (search for github.com link)
+
+TO DO - FOR TURBULENCE:
+[ ] Description
+[ ]	Bio
+[ ]	100x100px icon
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+NOTES and IDEAS:
+
+STATS
++ http://www.blendernation.com/2007/05/11/python-script-calculating-the-volume-of-objects/
+
+- - - - -
+
+Possible Titles:
++ INTERP
++ 3d Models From Unrelated Photographs
++ Every Photograph I Every Took Converted To 3d Models
++ Blob, Satellite, Box, Exploding, Wing
+
+- - - - -
+
+Grab files by tag:
+mdfind -onlyin $sourceLocation 'tag:Red' | tee $outputDirectory
+
+- - - - -
+
++ Python tools for photo-telemetry:
+	- http://wedidstuff.heavyimage.com/index.php/2013/07/12/open-source-photogrammetry-workflow
+	- https://github.com/iromu/vsfm-osx (free, Python based, hard to install on Mac at least)
+
++ Other tools
+	- http://www.acute3d.com (very expensive, like rental-only for $10k a year... boo)
+	- http://www.agisoft.ru/products/photoscan/standard ($180, $60 educational)		
+		- some details: http://downloads.agisoft.ru/pdf/photoscan_0_9_1_en.pdf
+
+- - - - -
+
+Requirements for online portion of project:
++ should meet web accessibility standards (wave.webaim.org or similar)
++ short description and 100x100px icon by Feb 28, 2014
++ credit on homepage: "{Project Title}" is a 2013 commission of New Radio and Performing 
+	Arts, Inc, for its Turbulence.org website. It was made possible with funding from the 
+	National Endowment for the Arts.
++ must also include a "back to Turbulence link on homepage
+
+- - - - -
+
+Pre-Process:
++ Load a list of all images using 'ListAllFilesAndSortByDate'
++ Interpolate halfway point between each image and the next using 'InterpolateImages'
+	- seems very important for creating proper model (otherwise only sees space around)
++ Place in 3d space using 'Add3dSpace', necessary for triangulation
+
+Then...
+
+PhotoScan Process:
++ Preferences
+	- enable OpenCL...
+	- depth filtering: 
+		- mild for lots of detail in foreground, aggressive for little
+		- however, mild loses the differentiation between object and room
+
++ Workflow > Add Folder...
+
++ Workflow > Align Photos...
+	- Accuracy High takes MUCH longer than Medium
+	- Pair preselection: only for already-paired images
+
++ Optional: set bounding box around object, align and resize
+	as needed - helps a lot in getting rid of the background;
+	also removes background images from resulting texture file
+
++ Workflow > Build Geometry...
+	- Tried:
+		Test: 		Batch 1, Arbitrary, Sharp, Medium
+		Test 2: 	Batch 1, Arbitrary, Smooth, Medium
+		Test 3: 	Batch 1, Height Field, Smooth, Medium
+		Test 4: 	Batch 1, Arbitrary, Sharp, High
+		Test 5: 	Batch 1, Arbitrary, Smooth, High
+		
+		Test 6: 	Batch 2, Arbitrary, Sharp, Medium
+		Test 7: 	Batch 2, Arbitrary, Smooth, Medium
+		Test 8: 	Batch 2, Height Field, Smooth, Medium
+		Test 9: 	Batch 2, Arbitrary, Sharp, High
+		Test 10: 	Batch 2, Arbitrary, Smooth, High
+		Test 11: 	Batch 2, Arbitrary, Sharp, Ultra High
+		Test 12: 	Batch 2, Arbitrary, Smooth, Ultra High (probably the best)
+
+	- Height Field assumes for bas relief or aerial images
+	- Sharp produces very glitched out messiness, smooth makes for blobbier and
+		most self-contained models
+	
++ Optional: Workflow > Build Texture...
+	- 4096 good for atlas dims, though 8192 would yield more detail
+
++ File > Export Model...
+	- include texture as PNG
+
+Then...
+
+Rhino STL Export
+Rhino 3d-printable Export
+
+- - - - -
+
+FILE SIZE REDUCTION IN MESH LAB
+Via some suggestions here: http://www.shapeways.com/tutorials/polygon_reduction_with_meshlab
+Using the patched OS X version for auto-scripting here: http://www.andrewhazelden.com/blog/2012/04/automate-your-meshlab-workflow-with-mlx-filter-scripts
+
+Create a symlink so we can run MeshLabServer easily:
+ln -s -i -v /Applications/MeshLab/meshlab.app/Contents/MacOS/meshlabserver /usr/local/bin/meshlabserver
+Where the first path is where the program is located, the second where you want it to go (this is where Homebrew installs for me, so it's nice and tidy)
+
++ Import
++ Filters > Remeshing, simplification and construction > Quadratic Edge Collapse Detection
++ Reduce faces to ~5k (for a good sized file - 10k = ~1MB)
++ Export
+
+Meshlab command:
+meshlabserver -i inputfile.obj -o outputfilename.obj ReduceFacesTo5k.mxl
+
+- - - -
+
+FILE SIZE REDUCTION WITH BLENDER
+
+(may need to first run): 
+	unset PYTHONPATH
+
+The, from the app package (setting an alias doesn't seem to work):
+	/Applications/Blender/blender.app/Contents/MacOS/blendernation
+
+blender -b [file to load] -o /Users/JeffThompson/Documents/test -F JPEG -x 1 -f 1
+
