@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 
 	<!--
@@ -36,10 +36,19 @@
 			resizeFont('h1');
 		}
 	</script>
+
+	<!-- analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-51138924-1', 'turbulence.org');
+		ga('send', 'pageview');
+	</script>
 </head>
 
-<!-- <body onload="resizeFont('h1')"> -->
-<body>
+<body onload="resizeFont('h1')">
 	<div id="wrapper">
 
 		<!-- HEADER -->
@@ -165,23 +174,35 @@
 			<ul class="thumbnails">
 				<?php
 
-					$r = @mysqli_query ($dbc, $q);
-					if ($r) {
-					while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
+					# version for DBO connection (on Turbulence server)
+					foreach($dbc -> query($q) as $row) {
 						$model_number = $row['index'];
-						
 						echo '<li>';
 						echo '<a href="model.php?model=' . $model_number . '">';											# for link to new page
 						echo '<img src="thumbnails/' . $model_number . '.png" alt="3D model #' . $model_number . '" />';	# thumbnail image
 						# echo '<p>' . $model_number . '</p>';																# model # as link
 						echo '</a>';
 						echo '</li>' . PHP_EOL . '				';															# format nice :)
-				      }			
-						mysqli_free_result($r);
-				    }
+					}
 					echo PHP_EOL;
+					$dbc = null;
 
-					mysqli_close($dbc);
+					# version for modern server configuration using mysqli_query()
+					// $r = @mysqli_query ($dbc, $q);
+					// if ($r) {
+					// while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
+					// 	$model_number = $row['index'];
+					// 	echo '<li>';
+					// 	echo '<a href="model.php?model=' . $model_number . '">';											# for link to new page
+					// 	echo '<img src="thumbnails/' . $model_number . '.png" alt="3D model #' . $model_number . '" />';	# thumbnail image
+					// 	# echo '<p>' . $model_number . '</p>';																# model # as link
+					// 	echo '</a>';
+					// 	echo '</li>' . PHP_EOL . '				';															# format nice :)
+				 	// }			
+					// 	mysqli_free_result($r);
+				 	// }
+					// echo PHP_EOL;
+					// mysqli_close($dbc);
 				?>
 			</ul>
 		</section> <!-- end models -->
@@ -195,7 +216,10 @@
 			<p>All <a href="https://github.com/jeffThompson/Interp">images, models, and code</a> released under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
 			 target="_blank">Creative Commons, BY-NC-SA</a> license.</p>
 
-			<p style="margin-top:60px;"><a href="http://www.jeffreythompson.org" target="_blank">www.jeffreythompson.org</a></p>
+			<ul style="margin-top:60px;">
+				<li><a href="http://www.turbulence.org" target="_blank">&larr; <span style="font-weight:400">back to</span> Turbulence</a></li>
+				<li><a href="http://www.jeffreythompson.org" target="_blank">www.jeffreythompson.org</a></li>
+			</ul>
 		</footer> <!-- end footer -->
 
 

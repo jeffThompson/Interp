@@ -10,10 +10,10 @@ National Endowment for the Arts.
 
 /* INDEX PAGE */
 /* header */
-header li {
+header li, footer li {
 	display: inline;
 }
-header li + li:before {
+header li + li:before, footer li + li:before {
 	content: '++';
 	padding: 0 15px;
 }
@@ -72,11 +72,11 @@ footer a:hover, footer a:active {
 
 /* break between credits, make footer wider on smaller screens */
 @media screen and (max-width: 500px) {
-	header li {
+	header li, footer li {
 		display: list-item;
 		padding: 0;
 	}
-	header li + li:before { 
+	header li + li:before, footer li + li:before { 
 		content: none;
 	}
 	footer {

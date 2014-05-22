@@ -1,5 +1,5 @@
 
-<html> 
+<html lang="en">
 <head> 
 
 	<!--
@@ -29,20 +29,35 @@
 		# load stats from database
 		require('mysqlConnect.php');
 		$q = "SELECT * FROM `models` WHERE `index`='" . $model_name . "'";
-		$r = @mysqli_query($dbc, $q);
-		if ($r) {
-			$row = mysqli_fetch_array($r, MYSQLI_ASSOC);
+		
+		# load stats using DBO (for Turbulence server)
+		foreach($dbc -> query($q) as $row) {
 			$stats = array(
 				'brightness' => $row['brightness'],
 				'hue' => $row['hue'],
 				'volume' => $row['volume'],
 				'type' => $row['type'],
 				'year' => $row['year']
-			);
-			mysqli_free_result($r);
+			);	
 		}
+		$dbc = null;
+
+		# load stats using modern server configuration with mysqli_query()
+		// $r = @mysqli_query($dbc, $q);
+		// if ($r) {
+		// 	$row = mysqli_fetch_array($r, MYSQLI_ASSOC);
+		// 	$stats = array(
+		// 		'brightness' => $row['brightness'],
+		// 		'hue' => $row['hue'],
+		// 		'volume' => $row['volume'],
+		// 		'type' => $row['type'],
+		// 		'year' => $row['year']
+		// 	);
+		// 	mysqli_free_result($r);
+		// }
+		// mysqli_close($dbc);
+
 		$use_hash = false;
-		mysqli_close($dbc);
 
 		# prev/next model filename
 		$prev_model_name = intval($model_name) - 1;								# previous #
@@ -131,6 +146,16 @@
 		    }
 
 		});
+	</script>
+
+	<!-- analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-51138924-1', 'turbulence.org');
+		ga('send', 'pageview');
 	</script>
 </head>
 

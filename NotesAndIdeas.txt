@@ -1,20 +1,13 @@
 
 TO DO - MAKING:
 
+[ ] missing model 341
 [ ]	Local version of Font Awesome
-[ ] Get final link, add Analytics - load from separate PHP file?
-[ ] Change database settings file to Turbulence server
-[ ]	Favicon
 
 TO DO - DOCUMENTATION AND CLEANUP:
 [ ]	One more look through for unused files
 
 TO DO - FOR TURBULENCE:
-[ ] Description
-[ ]	Bio
-[ ]	100x100px icon
-[ ] Upload CSV to database
-[ ]	Upload files, test on Turbulence server
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -45,7 +38,7 @@ mdfind -onlyin $sourceLocation 'tag:Red' | tee $outputDirectory
 + Other tools
 	- http://www.acute3d.com (very expensive, like rental-only for $10k a year... boo)
 	- http://www.agisoft.ru/products/photoscan/standard ($180, $60 educational)		
-		- some details: http://downloads.agisoft.ru/pdf/photoscan_0_9_1_en.pdf
+	- some details: http://downloads.agisoft.ru/pdf/photoscan_0_9_1_en.pdf
 
 - - - - -
 

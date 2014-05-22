@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 
 	<!--
@@ -36,6 +36,16 @@
 			resizeFont('h1');
 		}
 	</script>
+
+	<!-- analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-51138924-1', 'turbulence.org');
+		ga('send', 'pageview');
+	</script>
 </head>
 
 <body onload="resizeFont('h1')">
@@ -59,12 +69,12 @@
 			<h2>HOW THE MODELS WERE MADE</h2>
 			<p>In order to merge the photographs into 3D models using <a href="http://www.agisoft.ru/products/photoscan" target="_blank">PhotoScan</a>, the <a href="http://en.wikipedia.org/wiki/Photogrammetry" target="_blank">photogrammetry</a> software used (similar to the popular <a href="http://www.123dapp.com/catch" target="_blank">123D Catch</a> but offline and more flexible), the images had to be processed so the software would be tricked into thinking they were of the same object. After several tests, it appears that groups of 100 images that are faded into each other work the best.</p>
 
-			<img src="images/photo-in-room.png" style="width: 100%;" />
+			<img src="images/photo-in-room.png" style="width: 100%;" alt="A photograph, placed in a false 3D room." />
 			<p><em>A photograph, placed in a false 3D room.</em></p>
 
 			<p>This process was automated using series of small programs written in <a href="http://www.processing.org" target="_blank">Processing</a> (see the <a href="https://github.com/jeffThompson/Interp" target="_blank">project GitHub page</a> for full source code). The images were interpolated one into another and saved into separate folders. Because of the way <a href="http://en.wikipedia.org/wiki/Photogrammetry" target="_blank">photogrammetry</a> works, a background is required for the software to triangulate the position of the camera. For this reason, the interpolated photographs were placed into a fake 3D room and the "room" rotated a full 360&deg; over the course of the 100 images.</p>
 
-			<img src="images/photoscan-screenshot.png" style="width: 100%;" />
+			<img src="images/photoscan-screenshot.png" style="width: 100%;" alt="Point cloud created by PhotoScan." />
 			<p><em>Point cloud created by PhotoScan.</em></p>
 
 			<p>The resulting images were then fed into PhotoScan for camera alignment, meshing into a 3D surface, and the creation of a texture file which overlays cut-up bits of the original photographs onto the model. The resulting 3D files were rather large (approximately 60MB each with texture files), so the models' polygon count was reduced and the texture file compressed, accomplished using a mix of <a href="http://wiki.blender.org/index.php/Doc:2.6/Manual/Extensions/Python" target="_blank">Python</a>/<a href="http://www.blender.org" target="_blank">Blender</a> automation, Photoshop batch processing, and Processing sketches. While the resulting quality is lower, the models load much faster for web viewing.</p>
@@ -72,7 +82,7 @@
 			<h2>STATISTICS AND CLASSIFICATION</h2>
 			<p>The resulting models include statistical data, which can also be used to sort and filter the entire set. These include the <a href="http://jeffreythompson.org/turbulence/index.php?sortby=volume">volume</a> of the model in cubic millimeters, the average <a href="http://jeffreythompson.org/turbulence/index.php?sortby=hue">hue</a> and <a href="http://jeffreythompson.org/turbulence/index.php?sortby=brightness">brightness</a> of the texture (does not include gray, blank areas), and the <a href="http://jeffreythompson.org/turbulence/index.php?sortby=year">year</a> the source photographs were taken.</p>
 
-			<img src="images/classifications.png" style="width: 100%" />
+			<img src="images/classifications.png" style="width: 100%" alt="Model classifications: blob, satellite, box, wing, exploding." />
 			<p><em>Model classifications (clockwise): blob, satellite, box, wing, exploding.</em></p>
 
 			<p>Additionally, the resulting models displayed a surprising conformity to several basic classifications. Named for their resemblance to real-world structures, the classifications are:</p>
