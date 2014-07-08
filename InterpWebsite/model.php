@@ -222,7 +222,10 @@
 						}
 						
 						# download link (sends to download.php for zipping)
-						echo '<li id="downloadLink"><a href="download.php?model=' . $model_name . '" title="Download ' . $model_name . '.obj..."><span id="download"><i class="fa fa-download"></i>&nbsp;&nbsp;(' . $file_size . ')</span></a></li>' . PHP_EOL;
+						// echo '<li id="downloadLink"><a href="download.php?model=' . $model_name . '" title="Download ' . $model_name . '.obj..."><span id="download"><i class="fa fa-download"></i>&nbsp;&nbsp;(' . $file_size . ')</span></a></li>' . PHP_EOL;
+
+						# download link (using local, pre-zipped archive)
+						echo '<li id="downloadLink"><a href="http://www.jeffreythompson.org/downloads/zipped-models/model-' . $model_name . '.zip" title="Download ' . $model_name . '.obj..."><span id="download"><i class="fa fa-download"></i>&nbsp;&nbsp;(' . $file_size . ')</span></a></li>' . PHP_EOL;
 					?>
 				</ul>
 			</div> <!-- end stats -->

@@ -57,6 +57,7 @@
 			<ul>
 				<li>A project by <a href="http://www.jeffreythompson.org" target="_blank">Jeff Thompson</a></li>
 				<li>Commissioned by <a href="http://www.turbulence.org" target="_blank">Turbulence</a></li>
+				<li><a href="about.php">About</a></li>
 			</ul>
 		</header> <!-- end header -->
 
@@ -211,7 +212,7 @@
 		<!-- FOOTER -->
 		<div class="clear"></div>
 		<footer id="footer">
-			<p><strong>INTERP</strong> is a 2013 commission of <a href="http://new-radio.org" target="_blank">New Radio and Performing Arts, Inc</a> for its <a href="http://www.turbulence.org" target="_blank">Turbulence.org</a> website, made possible with funding from the National Endowment for the Arts. <a href="about.php">More about the project and how it was made...</a></p>
+			<p><strong>INTERP</strong> is a 2013 commission of <a href="http://new-radio.org" target="_blank">New Radio and Performing Arts, Inc</a> for its <a href="http://www.turbulence.org" target="_blank">Turbulence.org</a> website. It was made possible with funding from the National Endowment for the Arts. <a href="about.php">More about the project and how it was made...</a></p>
 
 			<p>All <a href="https://github.com/jeffThompson/Interp">images, models, and code</a> released under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
 			 target="_blank">Creative Commons, BY-NC-SA</a> license.</p>

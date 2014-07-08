@@ -1,6 +1,7 @@
 *.mov
 *.mp4
 *.psd
+*.zip
 
 InterpWebsite/mysqlConnect.php
 ServerSettings.txt
